@@ -32,54 +32,140 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-    $("#londonbutton").click(function(){
-        $.get("/london", function(data, status){
-		$("#city").text(data);
+    $("#Veyronbutton").click(function(){
+        $.get("/veyron", function(data, status){
+		$("#car").text(data);
         });
     });
 });
 $(document).ready(function(){
-    $("#parisbutton").click(function(){
-        $.get("/paris", function(data, status){
-		$("#city").text(data);
+    $("#Koenigseggbutton").click(function(){
+        $.get("/koenigsegg", function(data, status){
+		$("#car").text(data);
         });
     });
 });
 $(document).ready(function(){
-    $("#japanbutton").click(function(){
-        $.get("/japan", function(data, status){
-		$("#city").text(data);
+    $("#Tucsonsbutton").click(function(){
+        $.get("/tucsons", function(data, status){
+		$("#car").text(data);
         });
     });
 });
-
 </script>
+ <script>	
+xmlhttp=new XMLHttpRequest();
+xmlhttp.open("GET","cars.xml",false);
+xmlhttp.send();
+xmlDoc=xmlhttp.responseXML; 
+x=xmlDoc.getElementsByTagName("CD");
+
+function displayCDInfo(i)
+{
+TYPE=(x[i].getElementsByTagName("TYPE")[0].childNodes[0].nodeValue);
+title=(x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue);
+year=(x[i].getElementsByTagName("YEAR")[0].childNodes[0].nodeValue);
+country=(x[i].getElementsByTagName("COUNTRY")[0].childNodes[0].nodeValue);
+engine=(x[i].getElementsByTagName("ENGINE")[0].childNodes[0].nodeValue);
+image=(x[i].getElementsByTagName("IMAGE")[0].childNodes[0].nodeValue);
+youtube=(x[i].getElementsByTagName("YOUTUBE")[0].childNodes[0].nodeValue);
+txt= " <b> Type:</b> " + TYPE+"<br /><b>Title:</b> " + title+"<br /><b>Year: </b>" + year + "<br /><b>Country: </b>" + country+" <br /> <br/> <b>Engine: </b>"+ engine + " <br />  <B>Image:</B> <br /> <P> <img src = " + image + " width =460 height = 400 > <br /> youtube:<BR><iframe  src = http://www.youtube.com/embed/"+youtube +" width =460 height=345> " ;
+document.getElementById("showCD").innerHTML=txt;
+
+
+}
+  </script>
+  <style>
+  #Pos3 {
+	position: absolute;
+	top: 30px;
+	width: 350px;
+	height: 350px;
+	z-index: 2;
+	font-size:18pt;
+}
+
+</style>
    </head>
    <body>
    
    
 
-</div>
-<!-- Jumbotron -->
-      <div class="jumbotron"id = "city">
-        <h1>Capital City</h1>
-        <p class="lead">city name</p>
-        <p class="lead">Some text about a city</p>
-      </div>
+
 
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-lg-4">
-           <input type="submit" class="btn btn-primary" name="London" id="londonbutton" value="Update London">
+		<p class="lead">What is the most fastest car in the world ?</p>
+           <input type="submit" class="btn btn-primary" name="Veyron" id="Veyronbutton" value="Show">
         </div>
         <div class="col-lg-4">
-          <input type="submit" class="btn btn-primary" name="Paris" id="parisbutton" value="Update Paris">
+		<p class="lead">What is the most expensive car in the world ?</p>
+          <input type="submit" class="btn btn-primary" name="Koenigsegg" id="Koenigseggbutton" value="Show">
        </div>
         <div class="col-lg-4">
-          <input type="submit" class="btn btn-primary" name="Japan" id="japanbutton" value="Update Japan"> 
+		<p class="lead">What is the most popular car in Ireland ?</p>
+          <input type="submit" class="btn btn-primary" name="Tucsons" id="Tucsonsbutton" value="Show"> 
         </div>
       </div>
+<!-- Jumbotron -->
+      <div class="jumbotron"id = "car">
+        <h1>Car name</h1>
+        <p class="lead">Car Specifications</p>
+      
+      </div>
+	  
+	  
+	  
+	  <div id="Pos1">
+        <div class="col-md-6">
+		<div id='showCD'>
+		</div>
+  </div>          
+	   </div>
+<div class="col-md-3">
+		<div id="Pos3">
+          <p><B>Click on a Title to display cars from that years</B></p>
+  <p><B>Check out all the cars</B></p>
+<img src="{{ url_for('static', filename = '80s.jpg') }}" width="200" height="85">
 
+  <img src='images/80s.jpg' width="300" height="200">
+  <script>
+  for (var i=3;i<x.length;i++) 
+  {
+  if(i>=6)
+  {
+  break;
+  
+ }
+document.write("<ol onclick='displayCDInfo(" + i + ")'>");
+  
+  document.write("<br>");
+  document.write(x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue);
+ document.write("</ol>");
+ 
+  }
+</script>
+	<img src="images/90s.jpg" width="300" height="200">
+	<script>
+  for (var i=6;i<x.length;i++) 
+  {
+  if(i>=9)
+  {
+  break;
+  
+ }
+document.write("<ol onclick='displayCDInfo(" + i + ")'>");
+  
+  document.write("<br>");
+  document.write(x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue);
+ document.write("</ol>");
+ 
+  }
+</script>
+
+		</div>
+		</div>
 
    </body> 
-   </html>
+</html>

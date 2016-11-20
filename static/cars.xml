@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CATALOG xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<CD>
+		<TITLE>70'S Super Cars</TITLE>
+		<TYPE>Plymouth SuperBird</TYPE>
+		<COUNTRY>USA</COUNTRY>	
+		<ENGINE>Hemi engine 425 hp (317 kW)</ENGINE>
+		<YEAR>1970</YEAR>
+		<IMAGE>images/SuperBird.jpg</IMAGE>
+		<YOUTUBE>vytQ1iIgnfk</YOUTUBE>
+		
+	</CD>
+	<CD>
+		<TITLE>70'S Super Cars</TITLE>
+		<TYPE>Dodge Challenger R/T HEMI</TYPE>
+		<COUNTRY>USA</COUNTRY>		
+		<ENGINE> V8 engine</ENGINE>
+		<YEAR>1970</YEAR>
+		<IMAGE>images/challenger.jpg</IMAGE>
+		<YOUTUBE>X5GysFd6mok</YOUTUBE>
+		
+	</CD>
+	<CD>
+		<TITLE>70'S Super Cars</TITLE>
+		<TYPE>Chevrolet Chevelle 454 SS</TYPE>
+		<COUNTRY>USA</COUNTRY>		
+		<ENGINE>V8 engine</ENGINE>
+		<YEAR>1970</YEAR>
+		<IMAGE>images/454SS.jpg</IMAGE>
+		<YOUTUBE>tRdspL4kZO0</YOUTUBE>
+		
+	</CD>
+	<CD>
+		<TITLE>80'S Super Cars</TITLE>
+		<TYPE>Mercedes 190E</TYPE>
+		<COUNTRY>Germany</COUNTRY>
+		<ENGINE>1.8L 8v Engine</ENGINE>
+		<YEAR>1980</YEAR>
+		<IMAGE>images/190E.jpg</IMAGE>
+		<YOUTUBE>KGr5YdlAVMI</YOUTUBE>
+		
+	</CD>
+	<CD>
+		<TITLE>80'S Super Cars</TITLE>
+		<TYPE>Ferrari 288GTO</TYPE>
+		<COUNTRY>ITALY</COUNTRY>		
+		<ENGINE>3.0 litre V8 engine</ENGINE>
+		<YEAR>1997</YEAR>
+		<IMAGE>images/Ferrari.jpg</IMAGE>
+		<YOUTUBE>UKm-wcxkl5U</YOUTUBE>
+	
+	</CD>
+	<CD>
+		<TITLE>80'S Super Cars</TITLE>
+		<TYPE>Lamborghini Diablo</TYPE>
+		<COUNTRY>ITALY</COUNTRY>		
+		<ENGINE>V12 Engine</ENGINE>
+		<YEAR>1998</YEAR>
+		<IMAGE>images/diablo.jpg</IMAGE>
+		<YOUTUBE>SjNynz3N0wA</YOUTUBE>
+		
+	</CD>
+	<CD>
+		<TITLE>90'S Super Cars</TITLE>
+		<TYPE>Nissan Skyline</TYPE>
+		<COUNTRY>Japan</COUNTRY>		
+		<ENGINE>RB26DETT N1 Engine</ENGINE>
+		<YEAR>1973</YEAR>
+		<IMAGE>images/SKYLINE.jpg</IMAGE>
+		<YOUTUBE>Wivf5RRVM8Y</YOUTUBE>
+		
+	</CD>
+	<CD>
+		<TITLE>90'S Super Cars</TITLE>
+		<TYPE>Ferrari 500</TYPE>
+		<COUNTRY>ITALY</COUNTRY>		
+		<ENGINE> V12 engine</ENGINE>
+		<YEAR>1990</YEAR>
+		<IMAGE>images/F500.jpg</IMAGE>
+		<YOUTUBE>i-qk36fzMWg</YOUTUBE>
+		
+	</CD>
+	<CD>
+		<TITLE>90'S Super Cars</TITLE>
+		<TYPE>Dodge Viper </TYPE>
+		<COUNTRY>USA</COUNTRY>		
+		<ENGINE>Odd firing 8.0 L Engine</ENGINE>
+		<YEAR>1990</YEAR>
+		<IMAGE>images/viper.jpg</IMAGE>
+		<YOUTUBE>tMp_o9-0I_g</YOUTUBE>
+		
+	</CD>
+	
+</CATALOG>
