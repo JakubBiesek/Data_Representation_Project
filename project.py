@@ -16,5 +16,9 @@ def koenigsegg():
 def tucsons(): 
  return " The figures show 5,069 Tucsons were registered in the first five months of the year. They were followed by Volkswagen Golf registrations of 3,623 with the Ford Focus on 3,289. Others in the Top 10 were the Skoda Octavia, Nissan Qashqai, Toyota Corolla, Ford Fiesta, Toyota Yaris, Volkswagen Passat saloon and Toyota Auris."
 	
+@app.route("/about")
+def about():
+	return render_template("about.html")
+
 if __name__ == "__main__":     
 	app.run()
