@@ -12,13 +12,13 @@
     <title>Jakub Project</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="http://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="http://getbootstrap.com/examples/justified-nav/justified-nav.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/examples/navbar/navbar.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -29,6 +29,11 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+	
+<script>
+  var db = new PouchDB('my_database');
+</script>
+	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
@@ -52,13 +57,21 @@ $(document).ready(function(){
         });
     });
 });
+
+$(document).ready(function(){
+    $("#btn").click(function(){
+        $("#hide").hide("slow", function(){
+            alert("You successfully hided this feature");
+        });
+    });
+});
 </script>
  <script>	
 xmlhttp=new XMLHttpRequest();
-xmlhttp.open("GET","cars.xml",false);
+xmlhttp.open("GET","static/cars.xml",false);
 xmlhttp.send();
 xmlDoc=xmlhttp.responseXML; 
-x=xmlDoc.getElementsByTagName("CD");
+x=xmlDoc.getElementsByTagName("Car");
 
 function displayCDInfo(i)
 {
@@ -84,14 +97,51 @@ document.getElementById("showCD").innerHTML=txt;
 	z-index: 2;
 	font-size:18pt;
 }
-
+h1#carspec {
+    text-align: center;
+}
+p#carspec {
+    text-align: center;
+}
 </style>
    </head>
    <body>
    
-   
+   <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Fast Cars</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+              <li class="active"><a href="#">Home</a></li>
+              
+                        
+            </ul>        
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
 
-
+<div id="hide"class="jumbotron">
+<div class="col-md-8">
+        <h1 style="color:#FFF">Everything about cars</h1>
+		</div>
+		<div class="col-md-4">
+		<img src="static/images/retro.jpg" width="350" height="200">
+		</div>
+		<br>
+        <p style="color:#FFF">This page shows most fastest,exclusive and classics cars which change history of current car inustry.
+		</p>
+        <p>
+          <button id="btn"type="button" class="btn btn-lg btn-info">Hide this</button>
+        </p>
+      </div>
 
       <!-- Example row of columns -->
       <div class="row">
@@ -108,10 +158,11 @@ document.getElementById("showCD").innerHTML=txt;
           <input type="submit" class="btn btn-primary" name="Tucsons" id="Tucsonsbutton" value="Show"> 
         </div>
       </div>
+	  <br>
 <!-- Jumbotron -->
       <div class="jumbotron"id = "car">
-        <h1>Car name</h1>
-        <p class="lead">Car Specifications</p>
+        <h1 style="color:#FFF" id="carspec">Car name will be displayed here </h1>
+        <p class="lead" id="carspec" style="color:#FFF">Car Specifications will be displayed here</p>
       
       </div>
 	  
@@ -127,13 +178,13 @@ document.getElementById("showCD").innerHTML=txt;
 		<div id="Pos3">
           <p><B>Click on a Title to display cars from that years</B></p>
   <p><B>Check out all the cars</B></p>
-<img src="{{ url_for('static', filename = '80s.jpg') }}" width="200" height="85">
 
-  <img src='images/80s.jpg' width="300" height="200">
+
+  <img src='static/images/80s.jpg' width="300" height="200">
   <script>
-  for (var i=3;i<x.length;i++) 
+  for (var i=0;i<x.length;i++) 
   {
-  if(i>=6)
+  if(i>=3)
   {
   break;
   
@@ -146,11 +197,11 @@ document.write("<ol onclick='displayCDInfo(" + i + ")'>");
  
   }
 </script>
-	<img src="images/90s.jpg" width="300" height="200">
+	<img src="static/images/90s.jpg" width="300" height="200">
 	<script>
-  for (var i=6;i<x.length;i++) 
+  for (var i=3;i<x.length;i++) 
   {
-  if(i>=9)
+  if(i>=6)
   {
   break;
   
