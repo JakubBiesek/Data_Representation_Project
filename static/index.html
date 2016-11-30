@@ -30,9 +30,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 	
-<script>
-  var db = new PouchDB('my_database');
-</script>
+
 	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
@@ -57,7 +55,27 @@ $(document).ready(function(){
         });
     });
 });
-
+$(document).ready(function(){
+    $("#dbbutton").click(function(){
+        $.get("/db", function(data, status){
+		$("#car").text(data);
+        });
+    });
+});
+$(document).ready(function(){
+    $("#dbbutton2").click(function(){
+        $.get("/db2", function(data, status){
+		$("#car").text(data);
+        });
+    });
+});
+$(document).ready(function(){
+    $("#dbbutton3").click(function(){
+        $.get("/db3", function(data, status){
+		$("#car").text(data);
+        });
+    });
+});
 $(document).ready(function(){
     $("#btn").click(function(){
         $("#hide").hide("slow", function(){
@@ -91,7 +109,7 @@ document.getElementById("showCD").innerHTML=txt;
   <style>
   #Pos3 {
 	position: absolute;
-	top: 30px;
+	top: 40px;
 	width: 350px;
 	height: 350px;
 	z-index: 2;
@@ -127,7 +145,7 @@ p#carspec {
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-
+<div class="container marketing">
 <div id="hide"class="jumbotron">
 <div class="col-md-8">
         <h1 style="color:#FFF">Everything about cars</h1>
@@ -157,6 +175,7 @@ p#carspec {
 		<p class="lead">What is the most popular car in Ireland ?</p>
           <input type="submit" class="btn btn-primary" name="Tucsons" id="Tucsonsbutton" value="Show"> 
         </div>
+		
       </div>
 	  <br>
 <!-- Jumbotron -->
@@ -165,17 +184,30 @@ p#carspec {
         <p class="lead" id="carspec" style="color:#FFF">Car Specifications will be displayed here</p>
       
       </div>
-	  
-	  
-	  
+	  <h1 id="carspec" style="color:black">Interesting facts about Bugatti Veyron</h1>
+	  <div class="col-lg-4">
+		<p class="lead">Fact #1 </p>
+          <input type="submit" class="btn btn-primary" name="db" id="dbbutton" value="Show">
+       </div>
+	  <div class="col-lg-4">
+		<p class="lead">Fact #2 </p>
+          <input type="submit" class="btn btn-primary" name="db2" id="dbbutton2" value="Show">
+       </div>
+	   <div class="col-lg-4">
+		<p class="lead">Fact #3 </p>
+          <input type="submit" class="btn btn-primary" name="db3" id="dbbutton3" value="Show">
+       </div>
+	   
 	  <div id="Pos1">
         <div class="col-md-6">
 		<div id='showCD'>
 		</div>
   </div>          
 	   </div>
-<div class="col-md-3">
+	   
+ <div class="col-md-6">
 		<div id="Pos3">
+		<br><br>
           <p><B>Click on a Title to display cars from that years</B></p>
   <p><B>Check out all the cars</B></p>
 
@@ -214,7 +246,7 @@ document.write("<ol onclick='displayCDInfo(" + i + ")'>");
  
   }
 </script>
-
+</div>
 		</div>
 		</div>
 
