@@ -1,6 +1,35 @@
-from flask import Flask, request
-app = Flask(__name__)  
+# -*- coding: utf-8 -*-
+from flask import Flask
+from flask_mysqldb import MySQL
+#: connection to database
+app = Flask(__name__)
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = 'test'
+mysql = MySQL(app)
+#: database queries which are called on index file by jQuery feature
+@app.route('/db')
+def index():
+	cur = mysql.connection.cursor()
+	cur.execute("SELECT data FROM cars WHERE id = 1")
+	rv = cur.fetchall()
+	return str(rv)
 
+@app.route("/db2")
+def db2():
+	cur = mysql.connection.cursor()
+	cur.execute("SELECT data FROM cars WHERE id = 2")
+	rv2 = cur.fetchall()
+	return str(rv2)
+	
+@app.route("/db3")
+def db3():
+	cur = mysql.connection.cursor()
+	cur.execute("SELECT data FROM cars WHERE id = 3")
+	rv3 = cur.fetchall()
+	return str(rv3)
+	#: end of databse queries
 @app.route("/")
 def root():
     return app.send_static_file('index.html')
@@ -15,10 +44,7 @@ def koenigsegg():
 @app.route("/tucsons") 
 def tucsons(): 
  return " The figures show 5,069 Tucsons were registered in the first five months of the year. They were followed by Volkswagen Golf registrations of 3,623 with the Ford Focus on 3,289. Others in the Top 10 were the Skoda Octavia, Nissan Qashqai, Toyota Corolla, Ford Fiesta, Toyota Yaris, Volkswagen Passat saloon and Toyota Auris."
-	
-@app.route("/about")
-def about():
-	return render_template("about.html")
+#: end of text which will be returnet in html file using jQuery
 
 if __name__ == "__main__":     
 	app.run()
